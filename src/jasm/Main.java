@@ -32,10 +32,10 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Map;
 
+import wycc.util.OptArg;
 import jasm.io.JasmFileWriter;
 import jasm.io.ClassFileReader;
 import jasm.lang.ClassFile;
-import jasm.util.OptArg;
 import jasm.verifier.*;
 
 public class Main {
