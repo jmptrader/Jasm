@@ -26,7 +26,7 @@
 package jasm.lang;
 
 import jasm.attributes.*;
-import jasm.util.Pair;
+import wycc.util.Pair;
 
 import java.util.*;
 

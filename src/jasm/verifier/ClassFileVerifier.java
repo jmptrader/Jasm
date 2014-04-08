@@ -27,7 +27,7 @@ package jasm.verifier;
 
 import jasm.attributes.*;
 import jasm.lang.*;
-import jasm.util.Pair;
+import wycc.util.Pair;
 
 import java.util.*;
 

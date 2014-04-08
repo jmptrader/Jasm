@@ -25,6 +25,7 @@
 
 package jasm.io;
 
+import wycc.util.*;
 import jasm.attributes.*;
 import jasm.io.BinaryInputStream;
 import jasm.lang.*;

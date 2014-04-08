@@ -29,6 +29,7 @@ import jasm.io.BinaryOutputStream;
 import jasm.lang.*;
 import jasm.util.*;
 
+import wycc.util.*;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.PrintWriter;
