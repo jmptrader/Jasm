@@ -25,10 +25,10 @@
 
 package jasm.attributes;
 
+import wycc.util.Triple;
 import jasm.io.BinaryOutputStream;
 import jasm.io.ClassFileReader;
 import jasm.lang.*;
-import jasm.util.Triple;
 
 import java.io.IOException;
 import java.io.PrintWriter;

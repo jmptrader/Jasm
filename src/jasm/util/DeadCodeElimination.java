@@ -30,6 +30,8 @@ import jasm.lang.*;
 
 import java.util.*;
 
+import wycc.util.Pair;
+
 
 /**
  * The purpose of this pass is to eliminate any statically determinable
