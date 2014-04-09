@@ -1,5 +1,6 @@
 package jasm;
 
+import jasm.lang.ClassFile;
 import wycc.lang.PluginActivator;
 import wycc.lang.PluginContext;
 
@@ -13,8 +14,7 @@ public class Activator implements PluginActivator {
 
 	@Override
 	public void start(PluginContext context) {
-		// TODO Auto-generated method stub
-		System.out.println("JASM PLUGIN ACTIVATED");
+		context.register("wyfs.ContentType", ClassFile.ContentType.class);
 	}
 
 	@Override

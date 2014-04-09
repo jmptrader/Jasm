@@ -26,12 +26,48 @@
 package jasm.lang;
 
 import jasm.attributes.*;
+import jasm.io.ClassFileReader;
+import jasm.io.ClassFileWriter;
 import wycc.util.Pair;
+import wyfs.lang.Content;
+import wyfs.lang.Path;
 
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.OutputStream;
 import java.util.*;
 
 public class ClassFile {
 	
+	// =========================================================================
+	// Content Type
+	// =========================================================================
+
+	public static final class ContentType implements Content.Type<ClassFile> {
+		public Path.Entry<ClassFile> accept(Path.Entry<?> e) {
+			if (e.contentType() == this) {
+				return (Path.Entry<ClassFile>) e;
+			}
+			return null;
+		}
+
+		public ClassFile read(Path.Entry<ClassFile> e, InputStream input)
+				throws IOException {
+			ClassFileReader reader = new ClassFileReader(input);
+			return reader.readClass();
+		}
+
+		public void write(OutputStream output, ClassFile module)
+				throws IOException {
+			ClassFileWriter writer = new ClassFileWriter(output);
+			writer.write(module);
+		}
+
+		public String toString() {
+			return "Content-Type: class";
+		}
+	};
+
 	// =========================================================================
 	// State
 	// =========================================================================
