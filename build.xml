@@ -47,7 +47,7 @@
       <attribute name="Bundle-Name" value="Jasm"/>
       <attribute name="Bundle-SymbolicName" value="jasm.core"/>
       <attribute name="Bundle-Version" value="${version}"/>
-      <attribute name="Bundle-Activator" value="jasm.PluginActivator"/>
+      <attribute name="Bundle-Activator" value="jasm.Activator"/>
     </manifest>    
     <jar destfile="lib/jasm-v${version}.jar" manifest="tmp/MANIFEST.MF">
       <fileset dir="src">
