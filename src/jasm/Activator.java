@@ -14,7 +14,7 @@ public class Activator implements PluginActivator {
 
 	@Override
 	public void start(PluginContext context) {
-		context.register("wyfs.ContentType", ClassFile.ContentType.class);
+		context.register("wyfs.ContentType", ClassFile.ContentType);
 	}
 
 	@Override
