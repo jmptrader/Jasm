@@ -44,6 +44,10 @@
     <manifest file="tmp/MANIFEST.MF">
       <attribute name="Built-By" value="${user.name}"/>
       <attribute name="Main-Class" value="jasm.Main"/>
+      <attribute name="Bundle-Name" value="Jasm"/>
+      <attribute name="Bundle-SymbolicName" value="jasm.core"/>
+      <attribute name="Bundle-Version" value="${version}"/>
+      <attribute name="Bundle-Activator" value="jasm.PluginActivator"/>
     </manifest>    
     <jar destfile="lib/jasm-v${version}.jar" manifest="tmp/MANIFEST.MF">
       <fileset dir="src">
