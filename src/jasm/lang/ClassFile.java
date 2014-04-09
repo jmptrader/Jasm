@@ -43,7 +43,7 @@ public class ClassFile {
 	// Content Type
 	// =========================================================================
 
-	public static final class ContentType implements Content.Type<ClassFile> {
+	public static final Content.Type<ClassFile> ContentType = new Content.Type<ClassFile>() {
 		public Path.Entry<ClassFile> accept(Path.Entry<?> e) {
 			if (e.contentType() == this) {
 				return (Path.Entry<ClassFile>) e;
