@@ -14,7 +14,19 @@ public class Activator implements PluginActivator {
 
 	@Override
 	public void start(PluginContext context) {
-		context.register("wyfs.ContentType", ClassFile.ContentType);
+		context.register("wyfs.ContentType", new PluginContext.Extension() {
+
+			@Override
+			public String id() {
+				return "jasm.lang.ClassFile";
+			}
+
+			@Override
+			public Object data() {
+				return ClassFile.ContentType;
+			}
+			
+		});
 	}
 
 	@Override
