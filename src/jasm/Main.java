@@ -36,7 +36,7 @@ import jasm.io.JasmFileWriter;
 import jasm.io.ClassFileReader;
 import jasm.lang.ClassFile;
 import jasm.verifier.*;
-import jplug.util.OptArg;
+import wycc.util.OptArg;
 
 public class Main {
 	public static final int MAJOR_VERSION;
