@@ -28,7 +28,6 @@ package jasm.lang;
 import jasm.attributes.*;
 import jasm.io.ClassFileReader;
 import jasm.io.ClassFileWriter;
-import wycc.util.Pair;
 import wyfs.lang.Content;
 import wyfs.lang.Path;
 
@@ -36,6 +35,8 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
 import java.util.*;
+
+import jplug.util.Pair;
 
 public class ClassFile {
 	

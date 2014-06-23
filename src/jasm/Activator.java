@@ -1,8 +1,8 @@
 package jasm;
 
 import jasm.lang.ClassFile;
-import wycc.lang.PluginActivator;
-import wycc.lang.PluginContext;
+import jplug.lang.PluginActivator;
+import jplug.lang.PluginContext;
 
 /**
  * Entry point for Jasm plugin when used within the Whiley Compiler Collection.

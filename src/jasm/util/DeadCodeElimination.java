@@ -30,7 +30,8 @@ import jasm.lang.*;
 
 import java.util.*;
 
-import wycc.util.Pair;
+import jplug.util.Pair;
+
 
 
 /**

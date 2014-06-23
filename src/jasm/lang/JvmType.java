@@ -25,9 +25,10 @@
 
 package jasm.lang;
 
-import wycc.util.Pair;
 
 import java.util.*;
+
+import jplug.util.Pair;
 
 
 /**
