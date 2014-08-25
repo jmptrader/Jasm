@@ -34,8 +34,7 @@ public class JasmD {
 	public final static BuildTask BuildTask = new BuildTask() {
 		@Override
 		public String id() {
-			// TODO Auto-generated method stub
-			return null;
+			return "jasm.JasmD.BuildTask";
 		}
 
 		@Override
@@ -52,8 +51,7 @@ public class JasmD {
 
 		@Override
 		public String id() {
-			// TODO Auto-generated method stub
-			return null;
+			return "jasm.JasmD.BuildPlatform";
 		}
 
 		@Override
