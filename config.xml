@@ -1,0 +1,4 @@
+<project name="BuildConfig">
+  <property name="version" value="0.1.6"/>
+  <property name="JPLUG_JAR" value="lib/jplug-v0.1.jar"/>
+</project>

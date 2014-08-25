@@ -1,12 +1,12 @@
-<project name="jasm" default="jarfile">  
-  <property name="version" value="0.1.6"/>
-
+<project name="jasm" default="jarfile"> 
+  <import file="config.xml"/>
+ 
   <!-- ============================================== -->
   <!-- Build Commands -->
   <!-- ============================================== -->
 
   <target name="build">
-    <javac debug="true" debuglevel="vars,lines,source" source="1.6" includeantruntime="true" classpath=""> 
+    <javac debug="true" debuglevel="vars,lines,source" source="1.6" includeantruntime="true" classpath="${JPLUG_JAR}"> 
       <src path="src"/>
       <include name="*/**"/>
       <exclude name="jasm/testing/**"/> 
