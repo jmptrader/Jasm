@@ -24,7 +24,7 @@ public class Activator implements PluginActivator {
 	public void start(PluginContext context) {
 		// =================================================================
 		// Register Content.Type for class files.
-		// =================================================================	
+		// =================================================================
 		context.register("wyfs.ContentType", new PluginContext.Extension() {
 
 			@Override
@@ -36,14 +36,14 @@ public class Activator implements PluginActivator {
 			public Object data() {
 				return ClassFile.ContentType;
 			}
-			
+
 		});
-		
+
 		// =================================================================
 		// Register build task & platform for compiling from jasm to class
 		// files.
 		// =================================================================
-		context.register("wybs.BuildTask", new PluginContext.Extension() { 
+		context.register("wybs.BuildTask", new PluginContext.Extension() {
 			@Override
 			public String id() {
 				return "jasm.JasmC";
@@ -51,17 +51,27 @@ public class Activator implements PluginActivator {
 
 			@Override
 			public Object data() {
-				return new JasmC();
+				return JasmC.BuildTask;
 			}
 		});
-		
-				
+
+		context.register("wybs.BuildPlatform", new PluginContext.Extension() {
+			@Override
+			public String id() {
+				return "jasm.JasmC.Platform";
+			}
+
+			@Override
+			public Object data() {
+				return JasmC.BuildPlatform;
+			}
+		});
+
 		// =================================================================
 		// Register build task & platform for decompiling from class to jasm
 		// files.
 		// =================================================================
-		context.register("wybs.BuildTask", new PluginContext.Extension() { 
-			
+		context.register("wybs.BuildTask", new PluginContext.Extension() {
 			@Override
 			public String id() {
 				return "jasm.JasmD";
@@ -69,64 +79,27 @@ public class Activator implements PluginActivator {
 
 			@Override
 			public Object data() {
-				return new JasmD();
+				return JasmD.BuildTask;
 			}
 		});
-		
+
 		context.register("wybs.BuildPlatform", new PluginContext.Extension() {
 
 			@Override
 			public String id() {
-				return "jasm.Class2JasmExtension";
+				return "jasm.JasmD.Platform";
 			}
 
 			@Override
 			public Object data() {
-
-				return new wybs.lang.BuildPlatform() {
-
-					@Override
-					public String id() {
-						return "jasm.Class2JasmPlatform";
-					}
-
-					@Override
-					public Type<?> sourceType() {
-						// TODO Auto-generated method stub
-						return ClassFile.ContentType;
-					}
-
-					@Override
-					public Type<?> targetType() {
-						return JasmFile.ContentType;
-					}
-
-					@Override
-					public List<Type<?>> intermediateTypes() {
-						return Collections.EMPTY_LIST;
-					}
-
-					@Override
-					public Set<String> builders() {
-						HashSet<String> builders = new HashSet<String>();
-						builders.add("jasm.JasmD");
-						return builders;
-					}
-
-					@Override
-					public Set<String> dependents() {
-						return Collections.EMPTY_SET;
-					}
-					
-				};
+				return JasmD.BuildPlatform;
 			}
-			
 		});
 
 	}
 
 	@Override
 	public void stop(PluginContext context) {
-		// Not much to do really.
+		// Should unregister all registered extensions above.
 	}
 }
