@@ -26,12 +26,6 @@ public class Activator implements PluginActivator {
 		// Register Content.Type for class files.
 		// =================================================================
 		context.register("wyfs.ContentType", new PluginContext.Extension() {
-
-			@Override
-			public String id() {
-				return "jasm.lang.ClassFile";
-			}
-
 			@Override
 			public Object data() {
 				return ClassFile.ContentType;
@@ -43,24 +37,14 @@ public class Activator implements PluginActivator {
 		// Register build task & platform for compiling from jasm to class
 		// files.
 		// =================================================================
-		context.register("wybs.BuildTask", new PluginContext.Extension() {
-			@Override
-			public String id() {
-				return "jasm.JasmC";
-			}
-
+		context.register("wybs.BuildTask", new PluginContext.Extension() {			
 			@Override
 			public Object data() {
 				return JasmC.BuildTask;
 			}
 		});
 
-		context.register("wybs.BuildPlatform", new PluginContext.Extension() {
-			@Override
-			public String id() {
-				return "jasm.JasmC.Platform";
-			}
-
+		context.register("wybs.BuildPlatform", new PluginContext.Extension() {			
 			@Override
 			public Object data() {
 				return JasmC.BuildPlatform;
@@ -71,12 +55,7 @@ public class Activator implements PluginActivator {
 		// Register build task & platform for decompiling from class to jasm
 		// files.
 		// =================================================================
-		context.register("wybs.BuildTask", new PluginContext.Extension() {
-			@Override
-			public String id() {
-				return "jasm.JasmD";
-			}
-
+		context.register("wybs.BuildTask", new PluginContext.Extension() {			
 			@Override
 			public Object data() {
 				return JasmD.BuildTask;
@@ -84,12 +63,6 @@ public class Activator implements PluginActivator {
 		});
 
 		context.register("wybs.BuildPlatform", new PluginContext.Extension() {
-
-			@Override
-			public String id() {
-				return "jasm.JasmD.Platform";
-			}
-
 			@Override
 			public Object data() {
 				return JasmD.BuildPlatform;
