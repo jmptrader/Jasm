@@ -62,6 +62,18 @@
   </target>
 
   <!-- ============================================== -->
+  <!-- Plugin Installation -->
+  <!-- ============================================== -->
+  
+  <target name="plugin" depends="jarfile">
+    <copy todir="../../${plugin.dir}">
+      <fileset dir="lib/">
+	<include name="jasm-v${version}.jar"/>
+      </fileset>
+    </copy>
+  </target>
+
+  <!-- ============================================== -->
   <!-- Misc Commands -->
   <!-- ============================================== -->
 
