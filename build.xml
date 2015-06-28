@@ -47,7 +47,7 @@
       <attribute name="Bundle-Name" value="Jasm"/>
       <attribute name="Bundle-SymbolicName" value="org.whiley.jasm"/>
       <attribute name="Bundle-Version" value="${version}"/>
-      <attribute name="Bundle-Activator" value="jasm.Activator"/>
+      <attribute name="Bundle-Activator" value="jasm.JasmPlugin$Activator"/>
       <attribute name="Require-Bundle" value="org.whiley.wybs;bundle-version=&quot;0.3.0&quot;"/>
     </manifest>    
     <jar destfile="lib/jasm-v${version}.jar" manifest="tmp/MANIFEST.MF">

@@ -8,6 +8,7 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Set;
 
+import jplug.lang.Feature;
 import jplug.util.Pair;
 import wybs.lang.BuildPlatform;
 import wybs.lang.BuildProject;
@@ -29,27 +30,53 @@ public class JasmC {
 	// Build Task
 	// =====================================================================
 	
-	public final static BuildTask BuildTask = new BuildTask() {
+	public static class Task implements BuildTask,Feature {
+
+		@Override
+		public String name() {
+			return "BuildTask";
+		}
+
+		@Override
+		public String description() {
+			return null;
+		}
+
 		@Override
 		public String id() {
-			return "jasm.JasmC.BuildTask";
+			// TODO Auto-generated method stub
+			return null;
 		}
 
 		@Override
 		public BuildTask.Instance instantiate(BuildProject project) {
-			return new JasmC.Instance(project);
+			// TODO Auto-generated method stub
+			return null;
 		}
-	};
-	
+		
+	}
+		
 	// =====================================================================
 	// Build Platform
 	// =====================================================================
 	
-	public static final BuildPlatform BuildPlatform = new BuildPlatform() {
+	public static final class Platform implements BuildPlatform,Feature {
+
+		@Override
+		public String name() {
+			return "BuildPlatform";
+		}
+
+		@Override
+		public String description() {
+			// TODO Auto-generated method stub
+			return null;
+		}
 
 		@Override
 		public String id() {
-			return "jasm.JasmC.BuildPlatform";
+			// TODO Auto-generated method stub
+			return null;
 		}
 
 		@Override
@@ -60,12 +87,11 @@ public class JasmC {
 
 		@Override
 		public Type<?> targetType() {
-			// TODO Auto-generated method stub
 			return ClassFile.ContentType;
 		}
 
 		@Override
-		public List<Type<?>> intermediateTypes() { 
+		public List<Type<?>> intermediateTypes() {
 			return Collections.EMPTY_LIST;
 		}
 
@@ -79,7 +105,7 @@ public class JasmC {
 		public Set<String> dependents() {
 			return Collections.EMPTY_SET;
 		}
-	};
+	}
 	
 	// =====================================================================
 	// Build Task Instance

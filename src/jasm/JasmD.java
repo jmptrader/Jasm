@@ -9,6 +9,7 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Set;
 
+import jplug.lang.Feature;
 import jplug.util.Pair;
 import wybs.lang.BuildPlatform;
 import wybs.lang.BuildProject;
@@ -27,62 +28,83 @@ import wyfs.lang.Path.Root;
 public class JasmD {
 	
 	// =====================================================================
-	// Build Task
-	// =====================================================================
-
-	
-	public final static BuildTask BuildTask = new BuildTask() {
-		@Override
-		public String id() {
-			return "jasm.JasmD.BuildTask";
-		}
-
-		@Override
-		public BuildTask.Instance instantiate(BuildProject project) {
-			return new JasmD.Instance(project);
-		}
-	};
+		// Build Task
+		// =====================================================================
 		
-	// =====================================================================
-	// Build Platform
-	// =====================================================================
+		public static class Task implements BuildTask,Feature {
 
-	public static final BuildPlatform BuildPlatform = new BuildPlatform() {
+			@Override
+			public String name() {
+				return "BuildTask";
+			}
 
-		@Override
-		public String id() {
-			return "jasm.JasmD.BuildPlatform";
+			@Override
+			public String description() {
+				return null;
+			}
+
+			@Override
+			public String id() {
+				// TODO Auto-generated method stub
+				return null;
+			}
+
+			@Override
+			public BuildTask.Instance instantiate(BuildProject project) {
+				// TODO Auto-generated method stub
+				return null;
+			}
+			
 		}
-
-		@Override
-		public Type<?> sourceType() {
-			return ClassFile.ContentType;
-		}
-
-		@Override
-		public Type<?> targetType() {
-			// TODO Auto-generated method stub
-			return null;
-		}
-
-		@Override
-		public List<Type<?>> intermediateTypes() {
-			return Collections.EMPTY_LIST;
-		}
-
-		@Override
-		public Set<String> builders() {
-			// TODO Auto-generated method stub
-			return null;
-		}
-
-		@Override
-		public Set<String> dependents() {
-			return Collections.EMPTY_SET;
-		}		
-	};
-
+			
+		// =====================================================================
+		// Build Platform
+		// =====================================================================
 		
+		public static final class Platform implements BuildPlatform,Feature {
+
+			@Override
+			public String name() {
+				return "BuildPlatform";
+			}
+
+			@Override
+			public String description() {
+				return null;
+			}
+
+			@Override
+			public String id() {
+				return null;
+			}
+
+			@Override
+			public Type<?> sourceType() {
+				return ClassFile.ContentType;
+			}
+
+			@Override
+			public Type<?> targetType() {
+				return null;
+			}
+
+			@Override
+			public List<Type<?>> intermediateTypes() {
+				return Collections.EMPTY_LIST;
+			}
+
+			@Override
+			public Set<String> builders() {
+				// TODO Auto-generated method stub
+				return null;
+			}
+
+			@Override
+			public Set<String> dependents() {
+				return Collections.EMPTY_SET;
+			}
+		}
+			
 	// =====================================================================
 	// Build Task Instance
 	// =====================================================================
